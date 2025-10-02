@@ -32,6 +32,9 @@ const handleClick = (boxEl) => {
   if (boxEl.classList.contains("show")) {
     score = score + 1
     console.log("Boop! +1")
+  } else {
+    score = score - 1
+    console.log("Missed! -1")
   }
   scoreEl.textContent = score
   console.log(score)
