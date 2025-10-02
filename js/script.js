@@ -1,4 +1,7 @@
 /*Constants --------------------------------*/
+const scoreSound = new Audio("./audio/audio_score.wav")
+const missedSound = new Audio("./audio/audio_missed.wav")
+// missedSound credit = UHOH.wav by xtrgamr -- https://freesound.org/s/259172/ -- License: Attribution 4.0
 
 /*Variables (state) ----------------------------*/
 let score = 0
@@ -31,9 +34,11 @@ loopShowCat()
 const handleClick = (boxEl) => {
   if (boxEl.classList.contains("show")) {
     score = score + 1
+    scoreSound.play()
     console.log("Boop! +1")
   } else {
     score = score - 1
+    missedSound.play()
     console.log("Missed! -1")
   }
   scoreEl.textContent = score
