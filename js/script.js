@@ -1,66 +1,71 @@
 /*Constants --------------------------------*/
-let box
-let score = 0
+
 /*Variables (state) ----------------------------*/
+let score = 0
+let timeUp = false
 
 /*Cached Element References ------------------------*/
 const boxEls = document.querySelectorAll(".box")
-// const boxIndex = document.querySelectorAll("#id")
 const scoreEl = document.querySelector("#score")
 
 /*Functions --------------------------------*/
 
-const handleClick = () => {
-  score = score + 10
+const showCat = () => {
+  //this function adds the cat in a random spot and removes it - only once
+  const getRandomBox = Math.floor(Math.random() * boxEls.length)
+  boxEls[getRandomBox].classList.add("show")
+  const duration = Math.random() * 500 + 1000
+  setTimeout(() => {
+    boxEls[getRandomBox].classList.remove("show")
+  }, duration)
+}
+
+const loopShowCat = () => {
+  //this function loops the above function (showCat)
+  setInterval(() => {
+    showCat()
+  }, 1000)
+}
+loopShowCat()
+
+const handleClick = (boxEl) => {
+  if (boxEl.classList.contains("show")) {
+    score = score + 1
+    console.log("Boop! +1")
+  }
   scoreEl.textContent = score
-  console.log("BOOP WORKS!")
   console.log(score)
 }
 
 /*Event Listeners -----------------------------*/
 
 boxEls.forEach((boxEl) => {
-  boxEl.addEventListener("click", handleClick)
+  boxEl.addEventListener("click", () => handleClick(boxEl))
 })
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "S" || event.key === "s") {
     handleClick(boxEls[0])
-    console.log("S works")
+    console.log("S for index 0")
   }
-})
-
-document.addEventListener("keydown", (event) => {
   if (event.key === "D" || event.key === "d") {
     handleClick(boxEls[1])
-    console.log("D works")
+    console.log("D for index 1")
   }
-})
-
-document.addEventListener("keydown", (event) => {
   if (event.key === "F" || event.key === "f") {
     handleClick(boxEls[2])
-    console.log("F works")
+    console.log("F for index 2")
   }
-})
-
-document.addEventListener("keydown", (event) => {
   if (event.key === "J" || event.key === "j") {
     handleClick(boxEls[3])
-    console.log("J works")
+    console.log("J for index 3")
   }
-})
-
-document.addEventListener("keydown", (event) => {
   if (event.key === "K" || event.key === "k") {
     handleClick(boxEls[4])
-    console.log("K works")
+    console.log("K for index 4")
   }
-})
-
-document.addEventListener("keydown", (event) => {
   if (event.key === "L" || event.key === "l") {
     handleClick(boxEls[5])
-    console.log("L works")
+    console.log("L for index 5")
   }
 })

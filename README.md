@@ -11,7 +11,7 @@ A simple Whack-a-Mole game but renamed to Boop-the-Cat – because we are not ag
 Click “Start” button to begin. Boop the meow as they appear with either mouse clicks or keyboard buttons.
 ***
 ### *Concept Wireframe*
-![Image](Wireframe.jpg)
+![Image](./images/Wireframe.jpg)
 ***
 ### *Pseudocode*
 * The game will have a start button that will initiate the game.
