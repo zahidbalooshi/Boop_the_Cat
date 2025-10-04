@@ -5,12 +5,13 @@ const missedSound = new Audio("./audio/audio_missed.wav")
 
 /*Variables (state) ----------------------------*/
 let score = 0
-let timer = 6
+let timer = 11
 
 /*Cached Element References ------------------------*/
 const boxEls = document.querySelectorAll(".box")
 const scoreEl = document.querySelector("#score")
 const timerEl = document.querySelector("#timer")
+const resetBtn = document.querySelector("#reset")
 
 /*Functions --------------------------------*/
 
@@ -59,11 +60,17 @@ const countDown = () => {
       timerEl.textContent = timer
       console.log(timer)
     } else {
-      return (timerEl.textContent = "Time's up!")
+      timerEl.textContent = "Time's up!"
     }
   }, 1000)
 }
 countDown()
+
+const reset = () => {
+  timer = 11
+  score = 0
+  scoreEl.textContent = score
+}
 
 /*Event Listeners -----------------------------*/
 
@@ -97,3 +104,5 @@ document.addEventListener("keydown", (event) => {
     console.log("L for index 5")
   }
 })
+
+resetBtn.addEventListener("click", reset)
