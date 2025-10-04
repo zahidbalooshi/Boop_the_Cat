@@ -5,8 +5,7 @@ const missedSound = new Audio("./audio/audio_missed.wav")
 
 /*Variables (state) ----------------------------*/
 let score = 0
-let timeUp = false
-let timer = 16
+let timer = 6
 
 /*Cached Element References ------------------------*/
 const boxEls = document.querySelectorAll(".box")
@@ -16,13 +15,17 @@ const timerEl = document.querySelector("#timer")
 /*Functions --------------------------------*/
 
 const showCat = () => {
-  //this function adds the cat in a random spot and removes it - only once
-  const getRandomBox = Math.floor(Math.random() * boxEls.length)
-  boxEls[getRandomBox].classList.add("show")
-  const duration = Math.random() * 500 + 500
-  setTimeout(() => {
-    boxEls[getRandomBox].classList.remove("show")
-  }, duration)
+  if (timer === 0) {
+    return
+  } else {
+    //this function adds the cat in a random spot and removes it - only once
+    const getRandomBox = Math.floor(Math.random() * boxEls.length)
+    boxEls[getRandomBox].classList.add("show")
+    const duration = Math.random() * 500 + 500
+    setTimeout(() => {
+      boxEls[getRandomBox].classList.remove("show")
+    }, duration)
+  }
 }
 
 const loopShowCat = () => {
@@ -34,7 +37,9 @@ const loopShowCat = () => {
 loopShowCat()
 
 const handleClick = (boxEl) => {
-  if (boxEl.classList.contains("show")) {
+  if (timer === 0) {
+    return
+  } else if (boxEl.classList.contains("show")) {
     score = score + 1
     scoreSound.play()
     console.log("Boop! +1")
