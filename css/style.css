@@ -40,6 +40,19 @@ h2 {
   font-size: 20pt;
 }
 
+.top-keys {
+  margin: auto;
+  display: flex;
+  width: 100px;
+  margin-bottom: -10px;
+}
+
+.bottom-keys {
+  margin: auto;
+  display: flex;
+  width: 100px;
+}
+
 .board {
   margin: auto;
   display: flex;

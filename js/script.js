@@ -19,7 +19,6 @@ const showCat = () => {
   if (timer === 0) {
     return
   } else {
-    //this function adds the cat in a random spot and removes it - only once
     const getRandomBox = Math.floor(Math.random() * boxEls.length)
     boxEls[getRandomBox].classList.add("show")
     const duration = Math.random() * 500 + 500
@@ -33,7 +32,7 @@ const loopShowCat = () => {
   //this function loops the above function (showCat)
   setInterval(() => {
     showCat()
-  }, 500 + 500)
+  }, 500)
 }
 loopShowCat()
 
