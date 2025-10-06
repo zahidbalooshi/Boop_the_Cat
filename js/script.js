@@ -32,7 +32,7 @@ const loopShowCat = () => {
   //this function loops the above function (showCat)
   setInterval(() => {
     showCat()
-  }, 500)
+  }, 1000)
 }
 loopShowCat()
 

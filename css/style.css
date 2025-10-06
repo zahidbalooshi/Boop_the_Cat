@@ -38,19 +38,24 @@ h2 {
   text-align: center;
   margin: auto;
   font-size: 20pt;
+  margin-bottom: 10px;
 }
 
-.top-keys {
+.key {
+  width: 40px;
+}
+
+.keys {
   margin: auto;
   display: flex;
-  width: 100px;
+  align-items: center;
+  justify-content: space-around;
+  width: 500px;
   margin-bottom: -10px;
 }
 
-.bottom-keys {
-  margin: auto;
-  display: flex;
-  width: 100px;
+.bottom {
+  margin-top: -4px;
 }
 
 .board {
@@ -71,6 +76,11 @@ h2 {
   background-color: rgb(53, 41, 132);
 }
 
+img {
+  width: 80%;
+  margin: auto;
+}
+
 .box img {
   display: none;
   position: relative;
@@ -79,11 +89,6 @@ h2 {
 .box.show img {
   display: block;
   position: relative;
-}
-
-img {
-  width: 80%;
-  margin: auto;
 }
 
 #reset {
@@ -98,4 +103,44 @@ img {
   border-color: white;
   /* border-width: 0; */
   width: 130pt;
+}
+
+.bodytext {
+  font-size: 20px;
+  margin: auto;
+  position: relative;
+  width: 500px;
+  justify-content: center;
+  text-align: center;
+}
+.warning {
+  font-size: 20px;
+  margin: auto;
+  position: relative;
+  width: 500px;
+  justify-content: center;
+  text-align: center;
+  color: red;
+  width: 50%;
+}
+
+.cover-image {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#begin {
+  font-family: "Chewy", system-ui;
+  font-size: 12pt;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: white;
+  border-color: white;
+  width: 60px;
+  margin-top: 20px;
 }
