@@ -1,19 +1,24 @@
 /*Constants --------------------------------*/
+const startSound = new Audio("./audio/audio_start.ogg")
 const scoreSound = new Audio("./audio/audio_score.wav")
 const missedSound = new Audio("./audio/audio_missed.wav")
-// missedSound credit = UHOH.wav by xtrgamr -- https://freesound.org/s/259172/ -- License: Attribution 4.0
+const gameSound = new Audio("./audio/audio_music.wav")
 
 /*Variables (state) ----------------------------*/
+
 let score = 0
-let timer = 11
+let timer = 21
 
 /*Cached Element References ------------------------*/
+
 const boxEls = document.querySelectorAll(".box")
 const scoreEl = document.querySelector("#score")
 const timerEl = document.querySelector("#timer")
 const resetBtn = document.querySelector("#reset")
 
 /*Functions --------------------------------*/
+
+gameSound.play()
 
 const showCat = () => {
   if (timer === 0) {
@@ -29,7 +34,6 @@ const showCat = () => {
 }
 
 const loopShowCat = () => {
-  //this function loops the above function (showCat)
   setInterval(() => {
     showCat()
   }, 1000)
@@ -42,14 +46,11 @@ const handleClick = (boxEl) => {
   } else if (boxEl.classList.contains("show")) {
     score = score + 1
     scoreSound.play()
-    console.log("Boop! +1")
   } else {
     score = score - 1
     missedSound.play()
-    console.log("Missed! -1")
   }
   scoreEl.textContent = score
-  console.log(score)
 }
 
 const countDown = () => {
@@ -57,7 +58,6 @@ const countDown = () => {
     if (timer !== 0) {
       timer = timer - 1
       timerEl.textContent = timer
-      console.log(timer)
     } else {
       timerEl.textContent = "Time's up!"
     }
@@ -66,9 +66,11 @@ const countDown = () => {
 countDown()
 
 const reset = () => {
-  timer = 11
+  timer = 21
   score = 0
   scoreEl.textContent = score
+  startSound.play()
+  gameSound.play()
 }
 
 /*Event Listeners -----------------------------*/

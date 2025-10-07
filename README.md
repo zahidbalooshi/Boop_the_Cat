@@ -22,5 +22,11 @@ Click “Start” button to begin. Boop the meow as they appear with either mous
 * There will timer counting down to zero. As soon as it hits zero, the game will end.
 
 ### *Credits*
-[Credits will go here]
 
+* https://www.w3schools.com
+* https://developer.mozilla.org
+* https://codepen.io
+
+* Game Music: Mrthenoronha https://freesound.org/people/Mrthenoronha/
+* scoreSound Credit: https://freesound.org
+* missedSound Credit: UHOH.wav by xtrgamr -- https://freesound.org/s/259172/ -- License: Attribution 4.0

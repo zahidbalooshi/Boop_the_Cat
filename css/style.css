@@ -19,7 +19,7 @@ body {
 
 h2 {
   text-align: center;
-  margin-top: 0;
+  margin-top: -20px;
   margin-bottom: -40px;
   font-size: 20pt;
   color: red;
@@ -41,7 +41,12 @@ h2 {
   margin-bottom: 10px;
 }
 
-.key {
+img {
+  width: 100%;
+  margin: auto;
+}
+
+.top {
   width: 40px;
 }
 
@@ -55,6 +60,7 @@ h2 {
 }
 
 .bottom {
+  width: 40px;
   margin-top: -4px;
 }
 
@@ -76,19 +82,21 @@ h2 {
   background-color: rgb(53, 41, 132);
 }
 
-img {
-  width: 80%;
-  margin: auto;
-}
-
 .box img {
   display: none;
   position: relative;
 }
-
 .box.show img {
   display: block;
   position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-items: center;
+  margin-top: 10px;
 }
 
 #reset {
@@ -101,8 +109,20 @@ img {
   border-radius: 12px;
   background-color: white;
   border-color: white;
-  /* border-width: 0; */
-  width: 130pt;
+  width: 110pt;
+}
+
+#back {
+  font-family: "Chewy", system-ui;
+  font-size: 12pt;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: white;
+  border-color: white;
+  width: 110pt;
 }
 
 .bodytext {
@@ -125,11 +145,12 @@ img {
 }
 
 .cover-image {
-  width: 50%;
+  width: 45%;
   display: flex;
   margin: auto;
+  margin-bottom: 20px;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 #begin {
@@ -143,4 +164,9 @@ img {
   border-color: white;
   width: 60px;
   margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+cursor {
+  cursor: cell;
 }
