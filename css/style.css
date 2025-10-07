@@ -5,7 +5,12 @@
 }
 
 body {
-  background-color: orange;
+  background: #ff5a30;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 90, 48, 1) -70%,
+    rgba(252, 176, 69, 1) 100%
+  );
   font-family: "Chewy", system-ui;
   margin: 0;
 }
@@ -14,7 +19,7 @@ body {
   text-align: center;
   margin: 25px;
   color: black;
-  font-size: 50pt;
+  font-size: 60pt;
 }
 
 h2 {
@@ -126,6 +131,7 @@ img {
 }
 
 /* ---------------- */
+/* ---Home page---- */
 
 h1 {
   text-align: center;
@@ -160,7 +166,7 @@ h1 {
   width: 500px;
   justify-content: center;
   text-align: center;
-  color: red;
+  color: maroon;
   width: 50%;
   margin-bottom: 10px;
 }
