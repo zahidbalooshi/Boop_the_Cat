@@ -9,6 +9,8 @@ A simple Whack-a-Mole game but renamed to Boop-the-Cat – because we are not ag
 
 ### *How to Get Started*
 Click “Start” button to begin. Boop the meow as they appear with either mouse clicks or keyboard buttons.
+
+Link to game: https://boop-the-cat.surge.sh/
 ***
 ### *Concept Wireframe*
 ![Image](./images/Wireframe.jpg)
