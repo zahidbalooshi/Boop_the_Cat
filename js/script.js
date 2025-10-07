@@ -57,7 +57,7 @@ const countDown = () => {
   setInterval(() => {
     if (timer !== 0) {
       timer = timer - 1
-      timerEl.textContent = timer
+      timerEl.textContent = `Time left: ${timer} seconds`
     } else {
       timerEl.textContent = "Time's up!"
     }
