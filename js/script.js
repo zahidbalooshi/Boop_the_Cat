@@ -2,7 +2,7 @@
 const startSound = new Audio("./audio/audio_start.ogg")
 const scoreSound = new Audio("./audio/audio_score.wav")
 const missedSound = new Audio("./audio/audio_missed.wav")
-const gameSound = new Audio("./audio/audio_music.wav")
+const gameMusic = new Audio("./audio/audio_music.wav")
 
 /*Variables (state) ----------------------------*/
 
@@ -17,8 +17,8 @@ const timerEl = document.querySelector("#timer")
 const resetBtn = document.querySelector("#reset")
 
 /*Functions --------------------------------*/
-
-gameSound.play()
+gameMusic.loop = true
+gameMusic.play()
 
 const showCat = () => {
   if (timer === 0) {
@@ -26,7 +26,8 @@ const showCat = () => {
   } else {
     const getRandomBox = Math.floor(Math.random() * boxEls.length)
     boxEls[getRandomBox].classList.add("show")
-    const duration = Math.random() * 500 + 500
+
+    const duration = Math.random() * 500 + 700
     setTimeout(() => {
       boxEls[getRandomBox].classList.remove("show")
     }, duration)
@@ -70,7 +71,6 @@ const reset = () => {
   score = 0
   scoreEl.textContent = score
   startSound.play()
-  gameSound.play()
 }
 
 /*Event Listeners -----------------------------*/
@@ -82,27 +82,21 @@ boxEls.forEach((boxEl) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "S" || event.key === "s") {
     handleClick(boxEls[0])
-    console.log("S for index 0")
   }
   if (event.key === "D" || event.key === "d") {
     handleClick(boxEls[1])
-    console.log("D for index 1")
   }
   if (event.key === "F" || event.key === "f") {
     handleClick(boxEls[2])
-    console.log("F for index 2")
   }
   if (event.key === "J" || event.key === "j") {
     handleClick(boxEls[3])
-    console.log("J for index 3")
   }
   if (event.key === "K" || event.key === "k") {
     handleClick(boxEls[4])
-    console.log("K for index 4")
   }
   if (event.key === "L" || event.key === "l") {
     handleClick(boxEls[5])
-    console.log("L for index 5")
   }
 })
 
