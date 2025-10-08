@@ -17,7 +17,7 @@ const timerEl = document.querySelector("#timer")
 const resetBtn = document.querySelector("#reset")
 
 /*Functions --------------------------------*/
-gameMusic.loop = true
+gameMusic.loop = false
 gameMusic.play()
 
 const showCat = () => {
