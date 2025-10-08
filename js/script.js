@@ -8,6 +8,8 @@ const gameMusic = new Audio("./audio/audio_music.wav")
 
 let score = 0
 let timer = 21
+gameMusic.loop = false
+gameMusic.play()
 
 /*Cached Element References ------------------------*/
 
@@ -17,19 +19,19 @@ const timerEl = document.querySelector("#timer")
 const resetBtn = document.querySelector("#reset")
 
 /*Functions --------------------------------*/
-gameMusic.loop = false
-gameMusic.play()
 
 const showCat = () => {
   if (timer === 0) {
     return
   } else {
-    const getRandomBox = Math.floor(Math.random() * boxEls.length)
-    boxEls[getRandomBox].classList.add("show")
-
-    const duration = Math.random() * 500 + 700
+    // This function adds a cat in a random box
+    const randomIndex = Math.floor(Math.random() * boxEls.length)
+    boxEls[randomIndex].classList.add("show")
+    // This random duration decides for how long the cat will appear in the box
+    const duration = Math.random() * 300 + 700
+    // This function will remove the cat from the box after the assigned "duration"
     setTimeout(() => {
-      boxEls[getRandomBox].classList.remove("show")
+      boxEls[randomIndex].classList.remove("show")
     }, duration)
   }
 }
@@ -71,6 +73,7 @@ const reset = () => {
   score = 0
   scoreEl.textContent = score
   startSound.play()
+  gameMusic.play()
 }
 
 /*Event Listeners -----------------------------*/
@@ -100,4 +103,11 @@ document.addEventListener("keydown", (event) => {
   }
 })
 
+// My reset buttons
+
 resetBtn.addEventListener("click", reset)
+document.addEventListener("keydown", (event) => {
+  if (event.key === " ") {
+    reset()
+  }
+})
